@@ -124,7 +124,7 @@ subject(english_ii_advanced, english).
 subject(english_i_advanced, english).
 subject(biology_advanced, science).
 subject(french_3_advanced, language).
-subject(gt_humanities_i_english_i_advanced, interdisciplinary).
+subject(gt_humanities_i_english_i_advanced, english).
 subject(algebra_1_advanced, math).
 subject(advanced_public_speaking, communication).
 subject(spanish_3_advanced, language).
@@ -322,7 +322,7 @@ matches([medium,9],[easy,10]).
 matches([medium,10],[easy,11]).
 matches([medium,11],[easy,12]).
 matches([medium,12],[hard,12]).
-
+matches([X,X3],[X2|X4]).
 matches([hard|9],[medium|10]).
 matches([hard,10],[medium,11]).
 matches([hard,11],[medium,12]).
@@ -346,7 +346,7 @@ recommend(X,S,R,Prereqs):- plevel(X,S,TrueLevel),grade(X,G),
         prerequisite(R,Prereqs),courses(X,CoursesT),courses_not(X,CoursesNot),append(CoursesT,CoursesNot,AvoidCourses),\+member(R,AvoidCourses).
 next_recommend(X,S,R,Prereqs):-plevel(X,S,LevelNotFound),grade(X,G),ahead(LevelNotFound,AheadLevel),c_level(R,ClassLevel,GradeTaken), matches([AheadLevel|G],[ClassLevel|GradeTaken]), subject(R,S), 
         prerequisite(R,Prereqs),courses(X,CoursesT),courses_not(X,CoursesNot),append(CoursesT,CoursesNot,AvoidCourses),\+member(R,AvoidCourses).
-below_recommend(X,S,R,Prereqs):-plevel(X,S,LevelNotFound),grade(X,G),behind(LevelNotFound,AheadLevel),c_level(R,ClassLevel,GradeTaken), matches([AheadLevel|G],[ClassLevel|GradeTaken]), subject(R,S), 
+below_recommend(X,S,R,Prereqs):-plevel(X,S,LevelNotFound),grade(X,G),behind(LevelNotFound,BelowLevel),c_level(R,ClassLevel,GradeTaken), matches([BelowLevel|G],[ClassLevel|GradeTaken]), subject(R,S), 
         prerequisite(R,Prereqs),courses(X,CoursesT),courses_not(X,CoursesNot),append(CoursesT,CoursesNot,AvoidCourses),\+member(R,AvoidCourses).
 simple_recommend(X,S,R,Prereqs):-grade(X,G),c_level(R,_,G),subject(R,S), 
         prerequisite(R,Prereqs),courses(X,CoursesT),courses_not(X,CoursesNot),append(CoursesT,CoursesNot,AvoidCourses),\+member(R,AvoidCourses).
