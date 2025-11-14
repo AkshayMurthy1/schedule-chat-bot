@@ -5,10 +5,13 @@ os.environ['PATH'] += os.pathsep + r'C:\Program Files\swipl\bin'
 from pyswip import Prolog
 from prompt import *
 from openai import OpenAI
-client2 = OpenAI(api_key='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')
+open_ai_key = "" #type in your key here
+groq_key = "" #type in your key here
+
+client2 = OpenAI(api_key=open_ai_key)
 
 
-client = Groq(api_key='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')
+client = Groq(api_key=groq_key)
 
 prolog = Prolog()
 prolog.consult('knowledge_base.pl')
