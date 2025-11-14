@@ -13,13 +13,7 @@ This repository includes multiple chatbot versions. Early prototypes were tested
 
 ## Dependencies
 
-Install all dependencies with:
-
-```bash
-pip install -r requirements.txt
-```
-
-This project uses:
+Install all dependencies below:
 
 - pyswip — Python to Prolog integration  
 - openai — Used by the latest chatbot  
