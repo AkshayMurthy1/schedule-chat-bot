@@ -1,4 +1,3 @@
-<pre>
 # Schedule Chatbot
 
 A lightweight rule-based chatbot that generates student course schedules aligned with the Frisco ISD Course Catalog. It uses a Prolog knowledge base together with a Python chatbot interface to ensure schedules follow prerequisites, credits, endorsement pathways, and proper sequencing.
@@ -16,9 +15,9 @@ This repository includes multiple chatbot versions. Early prototypes were tested
 
 Install all dependencies with:
 
-<<<bash
+```bash
 pip install -r requirements.txt
-<<<
+```
 
 This project uses:
 
@@ -56,4 +55,3 @@ python dynamic_chatbot.py
 ## License
 
 MIT License.
-</pre>
