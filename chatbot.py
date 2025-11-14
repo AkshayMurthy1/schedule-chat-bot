@@ -6,7 +6,9 @@ os.environ['PATH'] += os.pathsep + r'C:\Program Files\swipl\bin'
 from pyswip import Prolog
 from prompt import *
 
-client = Groq(api_key='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')
+key = "" #type in your groq key here
+
+client = Groq(api_key=key)
 def main():
     prolog = Prolog()
     prolog.consult('knowledge_base.pl')
